@@ -13,12 +13,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={cn("min-h-screen  px-40     bg-slate-500 ",fira_Code.className)}>
+      <body
+        className={cn("min-h-screen lg:px-40  ", fira_Code.className)}
+      >
         <Navbar />
-        <div >
-          
-        {children}
-        </div>
+        <div>{children}</div>
       </body>
     </html>
   );
