@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={cn("min-h-screen  ", fira_Code.className)}
+        className={cn(" min-h-screen  ", fira_Code.className)}
       >
         <Navbar />
         <div>{children}</div>
