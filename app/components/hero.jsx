@@ -3,7 +3,10 @@ import TypeIt from "typeit-react";
 
 export default function Hero() {
   return (
-    <div id="home" className="min-h-screen px-4 lg:px-20 py-24 border-t-2 max-lg:py-32">
+    <div
+      id="home"
+      className="min-h-screen px-4 lg:px-20 py-24 border-t-2 max-lg:py-32"
+    >
       <div className="mb-8">
         <TypeIt
           options={{ loop: true }}
@@ -29,7 +32,7 @@ export default function Hero() {
         </p>
       </div>
       <div className="mb-8">
-        <p className="text-base lg:text-lg font-semibold leading-[25.6px]">
+        <p className="text-[12px] lg:text-lg font-semibold leading-[25.6px]">
           A graduate majoring in information engineering, my interest in
           programming and computers sparked a lifelong passion. Constantly
           learning and developing, I strive to make a big impact through
@@ -38,8 +41,12 @@ export default function Hero() {
         </p>
       </div>
       <div className="flex flex-col lg:flex-row gap-4">
-        <button className="border-2 rounded-3xl px-6 py-3 text-lg font-bold">LinkedIn</button>
-        <button className="border-2 rounded-3xl px-6 py-3 text-lg font-bold">CV</button>
+        <button className="border-2 rounded-3xl px-6 py-3 text-lg font-bold">
+          LinkedIn
+        </button>
+        <button className="border-2 rounded-3xl px-6 py-3 text-lg font-bold">
+          CV
+        </button>
       </div>
     </div>
   );
