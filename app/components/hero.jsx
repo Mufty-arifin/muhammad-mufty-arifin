@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div
       id="home"
-      className="min-h-screen px-4 lg:px-20 py-24 border-t-2 max-lg:py-32"
+      className="min-h-screen py-24 border-t-2 "
     >
       <div className="mb-8">
         <TypeIt
