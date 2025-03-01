@@ -5,7 +5,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="px-4 lg:px-20 py-12 border-t-2 min-h-screen"
+      className=" py-12 border-t-2 min-h-screen"
     >
       <h1 className="text-4xl font-semibold mb-8">Projects</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
