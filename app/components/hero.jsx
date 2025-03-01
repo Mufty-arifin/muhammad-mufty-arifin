@@ -41,9 +41,14 @@ export default function Hero() {
         </p>
       </div>
       <div className="flex flex-col lg:flex-row gap-4">
-        <button className="border-2 rounded-3xl px-6 py-3 text-lg font-bold">
+        <a
+          className="border-2 rounded-3xl px-6 py-3 text-lg text-center font-bold"
+          href="https://www.linkedin.com/in/muftyarifin/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           LinkedIn
-        </button>
+        </a>
         <button className="border-2 rounded-3xl px-6 py-3 text-lg font-bold">
           CV
         </button>

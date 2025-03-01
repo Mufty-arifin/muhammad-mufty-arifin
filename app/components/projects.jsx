@@ -21,9 +21,21 @@ export default function Projects() {
             <h2 className="text-2xl font-semibold mb-2">
               Web Profil dan PPDB Nurul Wathan
             </h2>
-            <p className="text-lg mb-4"></p>
+            <p className="text-lg mb-4">
+              Web Profil dan PPDB Nurul Wathan adalah project saya ketika
+              melaksanakan mata kuliah kerja praktek, saya membuat web profil
+              dan PPDB sebagai syarat kelulusan mata kuliah kerja praktek,
+              dengan menggunakan PHP, CSS, Bootstrap, Codegniter, MYSQL.
+            </p>
             <a href=""></a>
-            <button className="bg-gray-500 text-white rounded-[10px] px-4 py-2"></button>
+            <a
+              className="bg-gray-500 text-white rounded-[10px] px-4 py-2"
+              href="https://github.com/Mufty-arifin/Kerja_Praktek_Web_Profile_dan_PPDB"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source Code
+            </a>
           </div>
         </Card>
         <Card className="rounded-md overflow-hidden shadow-md">
@@ -40,9 +52,39 @@ export default function Projects() {
               Mini project from bootcamp to create a responsive restaurant
               website using HTML/CSS, Bootstrap, and JavaScript.
             </p>
-            <button className="bg-gray-500 text-white rounded-[10px] px-4 py-2">
+            <a
+              className="bg-gray-500 text-white rounded-[10px] px-4 py-2"
+              href="https://github.com/Mufty-arifin/dapurLezat"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Source Code
-            </button>
+            </a>
+          </div>
+        </Card>
+
+        <Card className="rounded-md overflow-hidden shadow-md">
+          <Image
+            src="/assets/frame.svg"
+            alt="Project Image"
+            width={350}
+            height={350}
+            className="rounded-t-md w-full"
+          />
+          <div className="p-4">
+            <h2 className="text-2xl font-semibold mb-2">Dapur Lezat</h2>
+            <p className="text-lg mb-4">
+              Mini project from bootcamp to create a responsive restaurant
+              website using HTML/CSS, Bootstrap, and JavaScript.
+            </p>
+            <a
+              className="bg-gray-500 text-white rounded-[10px] px-4 py-2"
+              href="https://github.com/Mufty-arifin/dapurLezat"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source Code
+            </a>
           </div>
         </Card>
       </div>
