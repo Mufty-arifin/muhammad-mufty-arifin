@@ -12,7 +12,7 @@ export default function Footer() {
     }
   };
   return (
-    <div className="flex flex-wrap justify-between   py-12 border-t-2">
+    <div className="flex flex-wrap justify-between   py-12 border-t-2 ">
       {/* Website Information */}
       <div className="mb-8 w-full lg:w-auto lg:flex-1 lg:mr-8">
         <h2 className="text-lg font-semibold mb-2">WEBSITES</h2>

@@ -3,8 +3,8 @@ import Image from "next/image";
 export default function Hobbies() {
  
   return (
-  <div id="projects" className="px-4 lg:px-20 py-12 border-t-2 min-h-screen">
-       <h1 className="text-4xl font-semibold mb-8">Hobbies</h1>
+  <div id="projects" className=" py-12 border-t-2 min-h-screen">
+       <h1 className="text-2xl font-semibold mb-8">Hobbies</h1>
  
        <div className="flex gap-5">
          <div className="flex flex-col items-center">

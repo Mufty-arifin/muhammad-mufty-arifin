@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div
       id="home"
-      className="min-h-screen py-24 border-t-2 "
+      className="min-h-screen py-24 border-t-2  "
     >
       <div className="mb-8">
         <TypeIt
@@ -24,10 +24,10 @@ export default function Hero() {
         />
       </div>
       <div className="mb-12">
-        <h1 className="text-4xl lg:text-7xl font-bold leading-12 lg:leading-20 tracking-wide">
+        <h1 className="text-4xl lg:text-7xl font-bold  ">
           Muhammad Mufty Arifin
         </h1>
-        <p className="text-4xl lg:text-7xl font-bold leading-12 lg:leading-20">
+        <p className="text-4xl lg:text-7xl font-bold">
           Passionate Front-End Developer
         </p>
       </div>

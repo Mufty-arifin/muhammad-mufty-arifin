@@ -112,6 +112,16 @@ export default function Navbar() {
                 Projects
               </button>
             </li>
+            <li>
+              <button
+                onClick={() => handleNavLinkClick("projects")}
+                className={`text-[#000000] hover:text-[#464545] font-bold ${
+                  selectedSection === "hobbies" ? "text-[#464545]" : ""
+                }`}
+              >
+                Hobbies
+              </button>
+            </li>
           </ul>
         </div>
       </div>
