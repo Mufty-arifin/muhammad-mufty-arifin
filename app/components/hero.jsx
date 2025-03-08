@@ -24,15 +24,15 @@ export default function Hero() {
         />
       </div>
       <div className="mb-12">
-        <h1 className="text-4xl lg:text-7xl font-bold  ">
+        <h1 className="text-4xl lg:text-6xl font-bold mb-5  ">
           Muhammad Mufty Arifin
         </h1>
-        <p className="text-4xl lg:text-7xl font-bold">
+        <p className="text-4xl lg:text-6xl font-bold">
           Passionate Front-End Developer
         </p>
       </div>
       <div className="mb-8">
-        <p className="text-[12px] lg:text-lg font-semibold leading-[25.6px]">
+        <p className="text-[12px] lg:text-base font-medium leading-[25.6px]">
           A graduate majoring in information engineering, my interest in
           programming and computers sparked a lifelong passion. Constantly
           learning and developing, I strive to make a big impact through

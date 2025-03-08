@@ -114,7 +114,7 @@ export default function Navbar() {
             </li>
             <li>
               <button
-                onClick={() => handleNavLinkClick("projects")}
+                onClick={() => handleNavLinkClick("hobbies")}
                 className={`text-[#000000] hover:text-[#464545] font-bold ${
                   selectedSection === "hobbies" ? "text-[#464545]" : ""
                 }`}
