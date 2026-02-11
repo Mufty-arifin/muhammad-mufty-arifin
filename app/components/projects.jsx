@@ -1,140 +1,68 @@
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 
+const projects = [
+  {
+    title: "Web Profil dan PPDB Nurul Wathan",
+    description:
+      "Web profil dan sistem PPDB yang dibuat saat kerja praktek menggunakan PHP, CodeIgniter, MySQL, Bootstrap.",
+    image: "/assets/webprofile.jpg",
+    github:
+      "https://github.com/Mufty-arifin/Kerja_Praktek_Web_Profile_dan_PPDB",
+  },
+  {
+    title: "Dapur Lezat",
+    description:
+      "Mini project bootcamp untuk membuat website restoran responsive menggunakan HTML, CSS, Bootstrap dan JavaScript.",
+    image: "/assets/frame.svg",
+    github: "https://github.com/Mufty-arifin/dapurLezat",
+  },
+  {
+    title: "Dapur Lezat 2",
+    description:
+      "Mini project bootcamp untuk membuat website restoran responsive menggunakan HTML, CSS, Bootstrap dan JavaScript.",
+    image: "/assets/frame.svg",
+    github: "https://github.com/Mufty-arifin/dapurLezat",
+  },
+];
+
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className=" py-12 border-t-2 min-h-screen"
-    >
-      <h1 className="text-4xl font-semibold mb-8">Projects</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-        <Card className="rounded-md overflow-hidden shadow-md">
-          <Image
-            src="/assets/webprofile.jpg"
-            alt="Project Image"
-            width={350}
-            height={350}
-            className="rounded-t-md w-full"
-          />
-          <div className="p-4">
-            <h2 className="text-2xl font-semibold mb-2">
-              Web Profil dan PPDB Nurul Wathan
-            </h2>
-            <p className="text-sm font-medium mb-4">
-              Web Profil dan PPDB Nurul Wathan adalah project saya ketika
-              melaksanakan mata kuliah kerja praktek, saya membuat web profil
-              dan PPDB sebagai syarat kelulusan mata kuliah kerja praktek,
-              dengan menggunakan PHP, CSS, Bootstrap, Codegniter, MYSQL.
-            </p>
-            <a href=""></a>
-            <a
-              className="bg-gray-500 text-white rounded-[10px] px-4 py-2"
-              href="https://github.com/Mufty-arifin/Kerja_Praktek_Web_Profile_dan_PPDB"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Source Code
-            </a>
-          </div>
-        </Card>
-        <Card className="rounded-md overflow-hidden shadow-md">
-          <Image
-            src="/assets/frame.svg"
-            alt="Project Image"
-            width={350}
-            height={350}
-            className="rounded-t-md w-full"
-          />
-          <div className="p-4">
-            <h2 className="text-2xl font-semibold mb-2">Dapur Lezat</h2>
-            <p className="text-sm font-medium mb-4">
-              Mini project from bootcamp to create a responsive restaurant
-              website using HTML/CSS, Bootstrap, and JavaScript.
-            </p>
-            <a
-              className="bg-gray-500 text-white rounded-[10px] px-4 py-2"
-              href="https://github.com/Mufty-arifin/dapurLezat"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Source Code
-            </a>
-          </div>
-        </Card>
+    <section id="projects" className="py-16 border-t min-h-screen">
+      <div className=" mx-auto px-4">
+        <h1 className="text-4xl font-bold mb-10">Projects</h1>
 
-        <Card className="rounded-md overflow-hidden shadow-md">
-          <Image
-            src="/assets/frame.svg"
-            alt="Project Image"
-            width={350}
-            height={350}
-            className="rounded-t-md w-full"
-          />
-          <div className="p-4">
-            <h2 className="text-2xl font-semibold mb-2">Dapur Lezat</h2>
-            <p className="text-lg mb-4">
-              Mini project from bootcamp to create a responsive restaurant
-              website using HTML/CSS, Bootstrap, and JavaScript.
-            </p>
-            <a
-              className="bg-gray-500 text-white rounded-[10px] px-4 py-2"
-              href="https://github.com/Mufty-arifin/dapurLezat"
-              target="_blank"
-              rel="noopener noreferrer"
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <Card
+              key={index}
+              className="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
-              Source Code
-            </a>
-          </div>
-        </Card>
-        <Card className="rounded-md overflow-hidden shadow-md">
-          <Image
-            src="/assets/frame.svg"
-            alt="Project Image"
-            width={350}
-            height={350}
-            className="rounded-t-md w-full"
-          />
-          <div className="p-4">
-            <h2 className="text-2xl font-semibold mb-2">Dapur Lezat</h2>
-            <p className="text-lg mb-4">
-              Mini project from bootcamp to create a responsive restaurant
-              website using HTML/CSS, Bootstrap, and JavaScript.
-            </p>
-            <a
-              className="bg-gray-500 text-white rounded-[10px] px-4 py-2"
-              href="https://github.com/Mufty-arifin/dapurLezat"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Source Code
-            </a>
-          </div>
-        </Card>
-        <Card className="rounded-md overflow-hidden shadow-md">
-          <Image
-            src="/assets/frame.svg"
-            alt="Project Image"
-            width={350}
-            height={350}
-            className="rounded-t-md w-full"
-          />
-          <div className="p-4">
-            <h2 className="text-2xl font-semibold mb-2">Dapur Lezat</h2>
-            <p className="text-lg mb-4">
-              Mini project from bootcamp to create a responsive restaurant
-              website using HTML/CSS, Bootstrap, and JavaScript.
-            </p>
-            <a
-              className="bg-gray-500 text-white rounded-[10px] px-4 py-2"
-              href="https://github.com/Mufty-arifin/dapurLezat"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Source Code
-            </a>
-          </div>
-        </Card>
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={400}
+                height={300}
+                className="w-full h-[220px] object-cover"
+              />
+
+              <div className="p-5 flex flex-col gap-3">
+                <h2 className="text-xl font-semibold">{project.title}</h2>
+
+                <p className="text-sm text-gray-600">{project.description}</p>
+
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block bg-gray-900 text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-black transition"
+                >
+                  Source Code
+                </a>
+              </div>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   );

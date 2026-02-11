@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 export default function Skills() {
   return (
-    <div id="skills" className="px-4 py-12 border-t-2 min-h-screen">
+    <div id="skills" className="px-4 py-16 border-t-2 min-h-screen">
       <h1 className="text-5xl font-semibold">Skills</h1>
       <Tabs defaultValue="language" className="mt-5 mb-5">
         <TabsList className="w-full lg:mb-2 mb-20 gap-5 lg:gap-10 flex flex-wrap ">

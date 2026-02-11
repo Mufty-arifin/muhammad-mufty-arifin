@@ -1,127 +1,89 @@
 "use client";
-import React, { useState, useEffect } from "react";
+
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [selectedSection, setSelectedSection] = useState("");
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
 
-  // Function to handle scrolling
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
+  let lastScroll = 0;
 
-    // Show navbar if scrolled to the top or scrolling up
-    setVisible(currentScrollPos < 200 || prevScrollPos > currentScrollPos);
+  const navLinks = [
+    { id: "home", label: "Home" },
+    { id: "skills", label: "Skills" },
+    { id: "projects", label: "Projects" },
+    { id: "hobbies", label: "Hobbies" },
+  ];
 
-    // Set previous scroll position
-    setPrevScrollPos(currentScrollPos);
-  };
-
+  // Handle scroll (optimized)
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll < 200 || currentScroll < lastScroll) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+
+      lastScroll = currentScroll;
+    };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos]);
+  }, []);
 
   const handleNavLinkClick = (sectionId) => {
     setSelectedSection(sectionId);
+    setMenuOpen(false);
+
     const section = document.getElementById(sectionId);
+
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
     <nav
-      className={`fixed w-full z-20 top-0 left-0 transition-all px-4 lg:px-20 ${
-        visible ? "" : "-translate-y-full"
+      className={`fixed w-full z-50 top-0 left-0 transition-transform duration-300 ${
+        visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="max-w-screen-xl rounded-[10px]  flex-col md:flex-row flex md:items-center justify-between p-2 mt-5 bg-opacity-90 bg-gray-100 dark:bg-transparent">
-        <div className="flex justify-between">
-          <a href="#home" className="flex items-center space-x-3">
-            <span className="text-2xl font-semibold whitespace-nowrap dark:text-white">
-              Mufty Arifin
-            </span>
-          </a>
-          <button
-            onClick={toggleMenu}
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg lg:hidden hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-multi-level"
-            aria-expanded={menuOpen ? "true" : "false"}
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
-        </div>
+      <div className="max-w-7xl mx-auto mt-5 px-6">
+        <div className="flex justify-between items-center rounded-xl bg-white/70 backdrop-blur-md shadow-md px-4 py-3">
+          {/* LOGO */}
+          <span className="text-2xl font-bold">Mufty Arifin</span>
 
-        <div
-          className={` lg:w-auto flex  ${
-            menuOpen ? "block" : "hidden"
-          } lg:block`}
-          id="navbar-multi-level"
-        >
-          <ul className="flex flex-col lg:flex-row font-medium p-4 gap-4 lg:p-0 border border-gray-100 rounded-md lg:space-x-8 lg:border-0 dark:bg-gray-800 dark:border-gray-700">
-            <li>
-              <button
-                onClick={() => handleNavLinkClick("home")}
-                className={`text-[#000000] hover:text-[#464545] font-bold ${
-                  selectedSection === "home" ? "text-[#464545]" : ""
-                }`}
-              >
-                Home
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleNavLinkClick("skills")}
-                className={`text-[#000000] hover:text-[#464545] font-bold ${
-                  selectedSection === "skills" ? "text-[#464545]" : ""
-                }`}
-              >
-                Skills
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleNavLinkClick("projects")}
-                className={`text-[#000000] hover:text-[#464545] font-bold ${
-                  selectedSection === "projects" ? "text-[#464545]" : ""
-                }`}
-              >
-                Projects
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleNavLinkClick("hobbies")}
-                className={`text-[#000000] hover:text-[#464545] font-bold ${
-                  selectedSection === "hobbies" ? "text-[#464545]" : ""
-                }`}
-              >
-                Hobbies
-              </button>
-            </li>
+          {/* MOBILE BUTTON */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="lg:hidden p-2"
+          >
+            ☰
+          </button>
+
+          {/* MENU */}
+          <ul
+            className={`absolute lg:static top-full left-0 w-full lg:w-auto
+            bg-white lg:bg-transparent shadow-md lg:shadow-none
+            lg:flex gap-8 font-semibold
+            ${menuOpen ? "block" : "hidden"} lg:block`}
+          >
+            {navLinks.map((link) => (
+              <li key={link.id} className="p-4 lg:p-0 text-center">
+                <button
+                  onClick={() => handleNavLinkClick(link.id)}
+                  className={`transition hover:text-gray-500 ${
+                    selectedSection === link.id ? "text-gray-500" : "text-black"
+                  }`}
+                >
+                  {link.label}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

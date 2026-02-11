@@ -3,10 +3,7 @@ import TypeIt from "typeit-react";
 
 export default function Hero() {
   return (
-    <div
-      id="home"
-      className="min-h-screen py-24 border-t-2  "
-    >
+    <div id="home" className="min-h-screen py-24 border-t-2 max-w-7xl mx-auto px-6 ">
       <div className="mb-8">
         <TypeIt
           options={{ loop: true }}
