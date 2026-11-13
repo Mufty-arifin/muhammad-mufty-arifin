@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+// Impor ikon dari lucide-react
+import { Github, Linkedin, Instagram } from "lucide-react"; 
 
 export default function Footer() {
   const [selectedSection, setSelectedSection] = useState("");
@@ -8,6 +10,8 @@ export default function Footer() {
     { id: "home", label: "Home" },
     { id: "skills", label: "Skills" },
     { id: "projects", label: "Projects" },
+    { id: "hobbies", label: "Hobbies" },
+    { id: "contact", label: "Contact" },
   ];
 
   const handleNavLinkClick = (sectionId) => {
@@ -19,13 +23,14 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t mt-20">
-      <div className="max-w-6xl mx-auto px-4 py-14 grid md:grid-cols-3 gap-10">
+    <footer className="border-t border-slate-200 dark:border-slate-800 bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-white transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* WEBSITE INFO */}
-        <div>
-          <h2 className="text-xl font-semibold mb-3">Muhammad Mufty</h2>
-
-          <p className="text-gray-500 leading-relaxed">
+        <div className="flex flex-col gap-3">
+          <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+            Muhammad Mufty Arifin
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-sm">
             Frontend Developer passionate about building modern web experiences
             and clean UI.
           </p>
@@ -33,60 +38,64 @@ export default function Footer() {
 
         {/* LINKS */}
         <div>
-          <h2 className="text-lg font-semibold mb-4">Navigation</h2>
-
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-800 dark:text-slate-300 mb-4">
+            Navigation
+          </h3>
           <ul className="space-y-3">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <button
                   onClick={() => handleNavLinkClick(link.id)}
-                  className="relative font-medium text-gray-500 hover:text-black transition group"
+                  className="relative text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition group text-left"
                 >
                   {link.label}
-
-                  {/* hover underline only */}
-                  <span className="absolute left-0 -bottom-1 h-[2px] bg-black w-0 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute left-0 -bottom-1 h-[2px] bg-indigo-600 dark:bg-indigo-500 w-0 group-hover:w-full transition-all duration-300" />
                 </button>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* SOCIAL MEDIA */}
+        {/* SOCIAL MEDIA DENGAN IKON */}
         <div>
-          <h2 className="text-lg font-semibold mb-4">Social</h2>
-
-          <div className="flex gap-5">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-800 dark:text-slate-300 mb-4">
+            Socials
+          </h3>
+          <div className="flex items-center gap-4">
             <a
               href="https://www.linkedin.com/in/muftyarifin/"
               target="_blank"
-              className="hover:scale-110 transition"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/50 transition-all shadow-sm"
             >
-              LinkedIn
+              <Linkedin className="w-5 h-5" />
             </a>
-
             <a
               href="https://github.com/Mufty-arifin"
               target="_blank"
-              className="hover:scale-110 transition"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/50 transition-all shadow-sm"
             >
-              GitHub
+              <Github className="w-5 h-5" />
             </a>
-
             <a
               href="https://www.instagram.com/mftyfn"
               target="_blank"
-              className="hover:scale-110 transition"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/50 transition-all shadow-sm"
             >
-              Instagram
+              <Instagram className="w-5 h-5" />
             </a>
           </div>
         </div>
       </div>
 
-      {/* bottom copyright */}
-      <div className="border-t py-6 text-center text-sm text-gray-400">
-        © 2026 Muhammad Mufty — Built with Next.js & Tailwind
+      {/* BOTTOM COPYRIGHT */}
+      <div className="border-t border-slate-200 dark:border-slate-900 py-6 text-center text-xs text-slate-500 transition-colors">
+        © 2026 Muhammad Mufty Arifin — Built with Next.js & Tailwind CSS
       </div>
     </footer>
   );
